@@ -1,0 +1,9 @@
+<% if @product.reviews.approved.count == 0%>
+<% else %>
+  <div id="reviews">
+    <% for review in @product.reviews.approval_filter %>
+        <%= render :partial => 'spree/shared/review', :locals => {:review => review} %>
+      <% end %>
+    <div class="clear"></div>
+  </div>
+<% end %>

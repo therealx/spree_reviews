@@ -1,0 +1,11 @@
+<div class="review" itemprop="reviews" itemscope itemtype="http://schema.org/Review">
+  <div itemprop="reviewBody">
+    <%= simple_format(review.review) %>
+  </div>
+  <% if Spree::Reviews::Config[:show_email] && review.user %>
+    <span itemprop="author"><%= review.user.email %></span>
+  <% else %>
+    <span itemprop="author"><%= review.name %></span>
+  <% end %>
+  <br/>
+</div>
